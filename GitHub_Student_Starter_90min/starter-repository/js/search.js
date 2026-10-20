@@ -4,5 +4,18 @@
 //         contains the query (case-insensitive).
 // Hint: .trim(), .toLowerCase(), .includes()
 window.matchesSearch = function (event, query) {
-  return true; // Replace this line.
+  if (query.trim() === "") {
+    return true;
+  }
+
+  query = query.trim().toLowerCase();
+
+  return (
+    event.title.toLowerCase().includes(query) ||
+    event.location.toLowerCase().includes(query)
+  );
 };
+
+
+
+
